@@ -7,21 +7,20 @@ document.addEventListener("DOMContentLoaded",function(){
     document.querySelector("#clear").addEventListener("click", clearCookiesField);
 });
 function tallyCookies() {
-     Cookies("Lemon", document.getElementById("lemon").value)
-     // document.cookie = "Lemon= " + document.getElementById("lemon").value;
-     // document.cookie = "Chip= " + document.getElementById("chip").value;
-     // document.cookie = "Sugar= " + document.getElementById("sugar").value;
+     document.cookie = "Lemon= " + document.getElementById("lemon").value;
+     document.cookie = "Chip= " + document.getElementById("chip").value;
+     document.cookie = "Sugar= " + document.getElementById("sugar").value;
      }
 
 function displayCookies() {
      console.log(displayCookies)
      var cookieArray = document.cookie.split("; ");
-     var lemon = Cookies("Lemon");
+     var lemon = Cookies.get("Lemon");
      var chip = Cookies.get("Chip");
      var sugar = Cookies.get("Sugar");
      document.querySelector(".displayLemon .number").innerText = lemon;
-     // document.querySelector(".displayChip .number").innerText = chip;
-     // document.querySelector(".displaySugar .number").innerText = sugar;
+     document.querySelector(".displayChip .number").innerText = chip;
+     document.querySelector(".displaySugar .number").innerText = sugar;
 
 
 }
